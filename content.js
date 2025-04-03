@@ -31,16 +31,16 @@
             console.log("Film wstrzymany (wykryto dźwięk)");
           }
         }
-        clearTimeout(silenceTimeout); // Resetujemy licznik, jeśli znowu mówimy
+        clearTimeout(silenceTimeout);
       } else {
         if (isSpeaking) {
           isSpeaking = false;
           silenceTimeout = setTimeout(() => {
             if (!isSpeaking) {
               video.play();
-              console.log("Film wznowiony (cisza przez 3 sekundy)");
+              console.log("Film wznowiony (cisza przez 1.8 sekundy)");
             }
-          }, 1800); // 3-sekundowe opóźnienie przed wznowieniem
+          }, 1800);
         }
       }
 
