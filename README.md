@@ -21,7 +21,7 @@ This Firefox extension automatically pauses a YouTube video when you start speak
 ## Usage
 - Play any YouTube video.
 - Speak into your microphone – the video will pause automatically.
-- Stop speaking – the video will resume after 3 seconds of silence.
+- Stop speaking – the video will resume after 1.8 seconds of silence.
 
 🚀 Perfect for multitasking, taking notes, or watching videos without manual pauses!
 
