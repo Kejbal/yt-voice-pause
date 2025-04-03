@@ -4,8 +4,8 @@ This Firefox extension automatically pauses a YouTube video when you start speak
 
 ## Features
 - **Voice Detection** – The video pauses when sound is detected from the microphone.
-- **Auto-Resume** – The video resumes **after 3 seconds of silence**.
-- **Prevents Interruptions** – If you speak again during the 3-second countdown, the timer resets.
+- **Auto-Resume** – The video resumes **after 1.8 seconds of silence**.
+- **Prevents Interruptions** – If you speak again during the 1.8-second countdown, the timer resets.
 - **Works on YouTube** – The plugin runs automatically when a video is playing.
 
 ## Installation Instructions
