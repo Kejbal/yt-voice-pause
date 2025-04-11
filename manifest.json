@@ -4,8 +4,9 @@
   "version": "1.0",
   "description": "Pauzuje film na YouTube, gdy mówisz do mikrofonu, i wznawia go, gdy przestajesz.",
   "permissions": [
+    "activeTab",
     "tabs",
-    "activeTab"
+    "https://www.youtube.com/*"
   ],
   "background": {
     "scripts": ["background.js"],
@@ -13,7 +14,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
+      "matches": ["https://www.youtube.com/*"],
       "js": ["content.js"]
     }
   ],
