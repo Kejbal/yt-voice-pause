@@ -1,9 +1,12 @@
 (async function () {
   const video = document.querySelector("video");
+  console.log("Run Youtube Voice Pause Script");
 
   if (!video) {
     console.error("Nie znaleziono wideo na stronie.");
     return;
+  } else {
+    console.log("Znaleziono wideo na stronie.");
   }
 
   try {
@@ -23,7 +26,7 @@
       analyser.getByteFrequencyData(dataArray);
       let volume = dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
 
-      if (volume > 10) {
+      if (volume > 2) {
         if (!isSpeaking) {
           isSpeaking = true;
           if (!video.paused) {
