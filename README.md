@@ -1,6 +1,6 @@
 # YouTube Auto Pause on Speech
 
-This Firefox extension automatically pauses a YouTube video when you start speaking and resumes playback after 3 seconds of silence.
+This Firefox extension automatically pauses a YouTube video when you start speaking and resumes playback after 1.8 seconds of silence.
 
 ## Features
 - **Voice Detection** – The video pauses when sound is detected from the microphone.
