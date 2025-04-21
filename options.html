@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ustawienia YouTube Voice Pause</title>
+</head>
+<body>
+  <h1>Ustawienia YouTube Voice Pause</h1>
+  
+  <label for="sensitivity">Czułość mikrofonu:</label>
+  <input type="number" id="sensitivity" min="1" max="100" value="2">
+  
+  <label for="frequency">Częstotliwość filtra (Hz):</label>
+  <input type="number" id="frequency" min="50" max="1000" value="200">
+  
+  <label for="rewind">Cofnij wideo o (sekundy):</label>
+  <input type="number" id="rewind" min="0" max="10" value="2">
+  
+  <button id="save">Zapisz</button>
+
+  <script src="options.js"></script>
+</body>
+</html>
