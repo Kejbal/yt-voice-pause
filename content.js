@@ -17,14 +17,15 @@
 
     // Retrieve sensitivity, frequency, and rewind settings
     const settings = await browser.storage.sync.get(["sensitivity", "frequency", "rewind"]);
-    const sensitivity = settings.sensitivity || 2; // Default value is 2
+    const sensitivity = settings.sensitivity || 20; // Default value is 20
     const frequency = settings.frequency || 200; // Default value is 200 Hz
     const rewind = settings.rewind || 2; // Default value is 2 seconds
 
-    // Add a high-pass filter
+    // Add a band-pass filter to focus on human voice frequencies
     const filter = audioContext.createBiquadFilter();
-    filter.type = "highpass"; // High-pass filter
-    filter.frequency.value = frequency; // Set filter frequency
+    filter.type = "bandpass"; // Band-pass filter
+    filter.frequency.value = 170; // Center frequency (typical for human voice)
+    filter.Q = 1; // Quality factor (controls bandwidth)
 
     const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
@@ -37,9 +38,12 @@
 
     function detectVoice() {
       analyser.getByteFrequencyData(dataArray);
-      let volume = dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
-
-      if (volume > sensitivity) {
+      // Calculate RMS (Root Mean Square) for a more stable volume measurement
+      const rms = Math.sqrt(
+        dataArray.reduce((sum, value) => sum + value * value, 0) / dataArray.length
+      );
+      console.log(rms, sensitivity, frequency, rewind);
+      if (rms > sensitivity) {
         if (!isSpeaking) {
           isSpeaking = true;
           if (!video.paused) {
