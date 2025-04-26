@@ -19,7 +19,7 @@
     const settings = await browser.storage.sync.get(["sensitivity", "frequency", "rewind"]);
     const sensitivity = settings.sensitivity || 20; // Default value is 20
     const frequency = settings.frequency || 200; // Default value is 200 Hz
-    const rewind = settings.rewind || 2; // Default value is 2 seconds
+    const rewind = settings.rewind || 1; // Default value is 1 seconds
 
     // Add a band-pass filter to focus on human voice frequencies
     const filter = audioContext.createBiquadFilter();
