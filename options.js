@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Load saved settings
     browser.storage.sync.get(["sensitivity", "frequency", "rewind"]).then((result) => {
-      sensitivityInput.value = result.sensitivity || 2; // Default value is 2
+      sensitivityInput.value = result.sensitivity || 15; // Default value is 2
       frequencyInput.value = result.frequency || 200; // Default value is 200 Hz
-      rewindInput.value = result.rewind || 2; // Default value is 2 seconds
+      rewindInput.value = result.rewind || 1; // Default value is 1 seconds
     });
   
     // Save settings
